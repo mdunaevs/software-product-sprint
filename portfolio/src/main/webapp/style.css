@@ -1,12 +1,27 @@
 html{
-    background-color: rgba(127, 141, 158, 0.623);
+    background-color: rgb(246, 250, 255)
 }
+
 
 #content {
   margin-left: auto;
   margin-right: auto;
   width: 650px;
-  font-family: "New Courier";
+  font-family: 'Sumana', serif;
+}
+
+h1{
+    font-family: 'Sumana', serif;
+    font-size: 40px;
+    margin-top: 250px;
+    margin-left: -110px;
+}
+
+h2{
+    font-family: 'Sumana';
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 0px;
 }
 
 #greeting-container {
@@ -16,8 +31,9 @@ html{
 ul {
   list-style-type: none;
   margin: 0;
-  padding-left: 200px;
+  padding: 0;
   overflow: hidden;
+  font-variant: small-caps;
 }
 
 li {
@@ -26,18 +42,58 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color:rgb(152, 140, 140);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 2px;
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
+/*li a:hover {
+  color: rgb(214, 32, 32);
+}
+*/
+#navbar{
+    width: 800px;
 }
 
-#navbar{
-    
-    
+hr {
+    background: gray;
+    height: 1px;
+    border: none;
+    width: 300%;
+    margin-right: 300px;
+}
+
+#item1 a:hover{
+    color: #4C8BF5;
+}
+#item2 a:hover{
+    color: #1AA260;
+}
+#item3 a:hover{
+    color: #FFCE44;
+}
+#item4 a:hover{
+    color: #DE5246;
+}
+
+#icons {
+    width: 300px;
+    margin-top: 130px;
+    margin-left: -360px;
+}
+
+#icons ul li{
+    padding: 5px;
+}
+/*
+rgb(30, 82, 243)
+*/
+
+#mypic{
+    float: right;
+    margin-right: -350px;
 }
