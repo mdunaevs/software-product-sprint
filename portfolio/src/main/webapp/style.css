@@ -1,5 +1,5 @@
 html{
-    background-color: rgb(250, 250, 255)
+    background-color: rgb(250, 250, 255);
 }
 
 
@@ -11,7 +11,7 @@ html{
 }
 
 h1{
-    ffont-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
     margin-top: 250px;
     margin-left: -110px;
@@ -96,4 +96,15 @@ rgb(30, 82, 243)
 #mypic{
     float: right;
     margin-right: -350px;
+}
+
+.fade {
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade:hover {
+    opacity: 0.25;
 }
