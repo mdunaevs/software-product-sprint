@@ -133,6 +133,20 @@
     margin-top: -220px;
 }
 
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -187,4 +201,8 @@ li a {
 
 .fade:hover {
     opacity: 0.10;
+}
+
+.text18 {
+    margin-top: -100px;
 }
