@@ -1,0 +1,99 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-item {
+  padding: 10px;
+  font-size: 30px;
+}
+
+.pic {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.descrip {
+    grid-column: 3;
+    grid-row: 1;
+    margin-top: 3em;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-variant: small-caps;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  /*color:rgb(152, 140, 140);*/
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* Change the link color to #111 (black) on hover */
+/*li a:hover {
+  color: rgb(214, 32, 32);
+}
+*/
+#navbar{
+    width: 800px;
+}
+
+#item1 a:hover{
+    color: #4C8BF5;
+}
+#item2 a:hover{
+    color: #1AA260;
+}
+#item3 a:hover{
+    color: #FFCE44;
+}
+#item4 a:hover{
+    color: #DE5246;
+}
+
+#teach {
+    text-indent: 5em;
+}
+
+#course {
+    text-align: center;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style-twitter.css">
+    <link href="https://fonts.googleapis.com/css?family=Sumana:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id = "content">
+        <div id = "navbar">
+            <ul>
+                <li id = "item1"><a href="index.html">Home</a></li>
+                <li id = "item2"><a href="professional.html">Professional</a></li>
+                <li id = "item3"><a href="experience.html">Experience</a></li>
+                <li id = "item4"><a href="personal.html">Gallery</a></li>
+                <!-- Page with photos I like and when the mouse is over it, it fades to a description-->
+            </ul>
+        </div>
+    </div>
+
+    <br/>
+    
+    <h1 id = "title">Sentiment Analysis</h1>
+
+    <br/>
+    <h2 class = "section-header">Overview</h2>
+    <p>
+        For my research, I work with the Institute of Software Research at Carnegie Mellon University. The goal of our research is to find the relationship between abusive language and sentiment. We produce several measures based on twitter data, in an attempt to analyze sentiment.
+    </p>
+    
+    <br/>
+    <h2 class = "section-header">Measures for abusive language</h2>
+        <br/>
+        <h3>Bad Words</h3>
+            <p class = "center">
+                We can test abusive language by acquiring a measure of the frequency of bad words. To begin this phase I had to gather a construct a list of bad words. Given several lists of bad words, I wrote a script that would output a dictionary mapping word to frequency. This would allow us to determine the most common bad words used, so that we could construct a list that would encompass expected bad words.  
+            </p>
+
+            <img src = "images/badword.png" class = "pcenter responsive" style="height:90vh; padding-top:5vh;">
+
+        <br/>
+        <h3>Absolutist Words</h3>
+            <p class = "center"> 
+                We can test abusive language by acquiring a measure of the frequency of absolutist words. Absolutist words are words that are inclusive, all-encompassing, an end in themselves, and cannot be modified in any way. Based on our research, we found that these words were a marker for anxiety and depression, which creates an abusive connotation.
+            </p>
+
+        <br/>
+        <h3>Exclusive Words</h3>
+            <p class = "center">
+                We can test abusive language by acquiring a measure of the frequency of exclusive words.
+            </p>
+
+            <img src = "images/exclusive.png" class = "pcenter responsive" style="height:80vh; padding-top:10vh;">
+        
+        <br/>
+        <h3>Pronouns</h3>
+            <p class = "center">
+                We can test abusive language by acquiring a measure of the frequency of pronouns. Second person pronouns, for example, may indicate a more direct communication among people and can be viewed as a "direct attack". 
+            </p>
+
+        Once we collected lists of these word types, I wrote a program that would calculate the frequency for each of these types for indivudial twitter posts.
+
+        <img src = "images/berncounts.png" class = "pcenter responsive" style="height:90vh; padding-top:5vh;">
+
+
+        <h3>Emojis</h3>
+            <p>
+                Later, we realized the potential for emojis. I Wrote code that would count the amount of emojis in a post and categorize in good, neutral, and bad counts. 
+            </p>
+
+
+        <img src = "images/tool.png" class = "pcenter responsive" style="height:90vh; padding-top:5vh;">
+
+        <br/>
+        <p>Using all of these measures, we wrote a program that would collect the frequency of these types of words. Using this information, we entered the collected data into a tool that would calculate sentiment (research advisor wrote).  </p>
+
+    <br/>
+    <br/>
+    <h2 class = "section-header">Bot detector</h2>
+        <p>The plan is to use this sentiment tool to determine whether posts are made by bots. Using sentiment, we can measure troll levels of posts. We plan on creating a machine learning algorithm that will determine whether a post was made by a bot. </p>
+
+  </body>
+</html>
