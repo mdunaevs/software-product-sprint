@@ -9,104 +9,176 @@
     <script src="script-personal.js"></script>
   </head>
   <body>
-    <div id = "content">
-        <div id = "navbar">
-            <ul>
-                <li id = "item1"><a href="index.html">Home</a></li>
-                <li id = "item2"><a href="professional.html">Professional</a></li>
-                <li id = "item3"><a href="experience.html">Experience</a></li>
-                <li id = "item4"><a href="personal.html">Portfolio</a></li>
-                <!-- Page with photos I like and when the mouse is over it, it fades to a description-->
-            </ul>
+    <div id = "con">
+        <div id = "content">
+            <div id = "navbar">
+                <ul>
+                    <li id = "item1"><a href="index.html">Home</a></li>
+                    <li id = "item2"><a href="professional.html">Professional</a></li>
+                    <li id = "item3"><a href="experience.html">Experience</a></li>
+                    <li id = "item4"><a href="personal.html">Gallery</a></li>
+                    <!-- Page with photos I like and when the mouse is over it, it fades to a description-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item pic1 container">
+                <img class = "fade responsive" src = "images/milan.png" width = "420" onclick="openModal();currentSlide(1)">
+            </div>
+            <div class="grid-item pic2 container">
+                <img class = "fade responsive" src = "images/acdc.png" width = "420" onclick="openModal();currentSlide(2)">
+            </div>
+            <div class="grid-item pic3 container">
+                <img class = "fade responsive" src = "images/benchwarmers.jpg" width = "420" onclick="openModal();currentSlide(3)">
+            </div>  
+            <div class="grid-item pic4 container">
+                <img class = "fade responsive" src = "images/queen.png" width = "420" onclick="openModal();currentSlide(4)">
+            </div>
+            <div class="grid-item pic5 container">
+                <img class = "fade responsive" src = "images/mountain.JPG" width = "420" onclick="openModal();currentSlide(5)">
+            </div>
+            <div class="grid-item pic6 container">
+                <img class = "fade responsive" src = "images/controller.png" width = "420" onclick="openModal();currentSlide(6)">
+            </div>
+            <div class="grid-item pic7 container">
+                <img class = "fade responsive" src = "images/scooby-doo.png" width = "420" onclick="openModal();currentSlide(7)">
+            </div>
+            <div class="grid-item pic8 container">
+                <img class = "fade responsive" src = "images/florida.PNG" width = "420" onclick="openModal();currentSlide(8)">
+            </div>
+            <div class="grid-item pic9 container">
+                <img class = "fade responsive" src = "images/cmu.JPG" width = "420" onclick="openModal();currentSlide(9)">
+            </div>
+            <div class="grid-item pic10 container">
+                <img class = "fade responsive" src = "images/flash.png" width = "420" onclick="openModal();currentSlide(10)">
+            </div>
+            <div class="grid-item pic11 container">
+                <img class = "fade responsive" src = "images/prot.jpg" width = "420" onclick="openModal();currentSlide(11)">
+            </div>
+            <div class="grid-item pic12 container">
+                <img class = "fade responsive" src = "images/zohan.jpeg" width = "420" onclick="openModal();currentSlide(12)">
+            </div>
+            <div class="grid-item pic13 container">
+                <img class = "fade responsive" src = "images/nebula.jpg" width = "420" onclick="openModal();currentSlide(13)">
+            </div>
+            <div class="grid-item pic14 container">
+                <img class = "fade responsive" src = "images/pacman.jpg" width = "420" onclick="openModal();currentSlide(14)">
+            </div>
+            <div class="grid-item pic15 container">
+                <img class = "fade responsive" src = "images/hurricane.jpg" width = "420" onclick="openModal();currentSlide(15)">
+            </div>
+            <div class="grid-item pic16 container">
+                <img class = "fade responsive" src = "images/underwater.jpg" width = "420" onclick="openModal();currentSlide(16)">
+            </div>
+            <div class="grid-item pic17 container">
+                <img class = "fade responsive" src = "images/starting-something.jpg" width = "420" onclick="openModal();currentSlide(17)">
+            </div>
+            <div class="grid-item pic18 container">
+                <img class = "fade responsive" src = "images/tesla.jpg" width = "420" onclick="openModal();currentSlide(18)">
+            </div>
+            <div class="grid-item pic19 container">
+                <img class = "fade responsive" src = "images/future.jpg" width = "420" onclick="openModal();currentSlide(19)">
+            </div>
+            <div class="grid-item pic20 container">
+                <img class = "fade responsive" src = "images/cyclist.png" width = "420" onclick="openModal();currentSlide(20)">
+            </div>
+            <div class="grid-item pic21 container">
+                <img class = "fade responsive" src = "images/steampunk.jpg" width = "420" onclick="openModal();currentSlide(21)">
+            </div>
         </div>
     </div>
 
-    <div class="grid-container">
-        <div class="grid-item pic1 container">
-            <img class = "fade" src = "images/milan.png" width = "420">
-            <div class = "centered">Favorite soccer team</div>
-        </div>
-        <div class="grid-item pic2 container">
-            <img class = "fade" src = "images/acdc.png" width = "420">
-            <div class = "centered">My favorite song is Highway to Hell</div>
-        </div>
-        <div class="grid-item pic3 container">
-            <img class = "fade" src = "images/benchwarmers.jpg" width = "420">
-            <div class = "centered">The goofy humor of the movie is what makes it my favorite</div>
-        </div>  
-        <div class="grid-item pic4 container">
-            <img class = "fade" src = "images/queen.png" width = "420">
-            <div class = "centered">No explanation needed. It's Queen.</div>
-        </div>
-        <div class="grid-item pic5 container">
-            <img class = "fade" src = "images/mountain.JPG" width = "420">
-            <div class = "centered">Picture I took at Rattlesnake Ridge in Seattle while hiking</div>
-        </div>
-        <div class="grid-item pic6 container">
-            <img class = "fade" src = "images/controller.png" width = "420">
-            <div class = "centered">Zombies at 2am</div>
-        </div>
-        <div class="grid-item pic7 container">
-            <img class = "fade" src = "images/scooby-doo.png" width = "420">
-            <div class = "centered pic7">"Would you do it for a Scooby Snack?"</div>
-        </div>
-        <div class="grid-item pic8 container">
-            <img class = "fade" src = "images/florida.PNG" width = "420">
-            <div class = "centered">Picture I took in my friends backyard during a summer sunset</div>
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="mySlides">
+                <img src = "images/milan.png" style="height:97vh; padding-top:1vh;" class = "center">
             </div>
-        <div class="grid-item pic9 container">
-            <img class = "fade" src = "images/cmu.JPG" width = "420">
-            <div class = "centered">Picture I took at my school on my way to work</div>
+            
+            <div class="mySlides">
+                <img src = "images/acdc.png" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/benchwarmers.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/queen.png" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+
+            <div class="mySlides">
+                <img src = "images/mountain.JPG" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/controller.png" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/scooby-doo.png" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/florida.PNG" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+
+            <div class="mySlides">
+                <img src = "images/cmu.JPG" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/flash.png" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/prot.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/zohan.jpeg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+
+            <div class="mySlides">
+                <img src = "images/nebula.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/pacman.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/hurricane.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/underwater.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+
+            <div class="mySlides">
+                <img src = "images/starting-something.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/tesla.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/future.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
+            <div class="mySlides">
+                <img src = "images/cyclist.png" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+
+            <div class="mySlides">
+                <img src = "images/steampunk.jpg" style="height:97vh; padding-top:1vh;" class = "center">
+            </div>
+            
         </div>
-        <div class="grid-item pic10 container">
-            <img class = "fade" src = "images/flash.png" width = "420">
-            <div class = "centered">Favorite comic hero</div>
-        </div>
-        <div class="grid-item pic11 container">
-            <img class = "fade" src = "images/prot.jpg" width = "420">
-            <div class = "centered">Venezeulan protests</div>
-        </div>
-        <div class="grid-item pic12 container">
-            <img class = "fade" src = "images/zohan.jpeg" width = "420">
-            <div class = "centered pic12">DISCO DISCO!</div>
-        </div>
-        <div class="grid-item pic13 container">
-            <img class = "fade" src = "images/nebula.jpg" width = "420">
-            <div class = "centered">As a kid I always considered becoming an astronaut</div>
-        </div>
-        <div class="grid-item pic14 container">
-            <img class = "fade" src = "images/pacman.jpg" width = "420">
-            <div class = "centered pic14">Quote by CMU Nobel Prize winner</div>
-        </div>
-        <div class="grid-item pic15 container">
-            <img class = "fade" src = "images/hurricane.jpg" width = "420">
-            <div class = "centered"></div>
-        </div>
-        <div class="grid-item pic16 container">
-            <img class = "fade" src = "images/underwater.jpg" width = "420">
-            <div class = "centered"></div>
-        </div>
-        <div class="grid-item pic17 container">
-            <img class = "fade" src = "images/starting-something.jpg" width = "420">
-            <div class = "centered">Page 404</div>
-        </div>
-        <div class="grid-item pic18 container">
-            <img class = "fade" src = "images/tesla.jpg" width = "420">
-            <div class = "centered text18">"The present is theirs; the future, for which I really worked, is mine."</div>
-        </div>
-        <div class="grid-item pic19 container">
-            <img class = "fade" src = "images/future.jpg" width = "420">
-            <div class = "centered">Utopian star trek society</div>
-        </div>
-        <div class="grid-item pic20 container">
-            <img class = "fade" src = "images/cyclist.png" width = "420">
-            <div class = "centered">When traffic is too long</div>
-        </div>
-        <div class="grid-item pic21 container">
-            <img class = "fade" src = "images/steampunk.jpg" width = "420">
-            <div class = "centered"></div>
-        </div>
-        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
   </body>
 </html>
