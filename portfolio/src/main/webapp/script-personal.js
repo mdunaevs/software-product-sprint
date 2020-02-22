@@ -1,5 +1,5 @@
 function openModal() {
-  document.getElementById("con").style.opacity = 0.15;
+  document.getElementById("con").style.opacity = 0.05;
   document.getElementById("myModal").style.display = "block";
   console.log("clicked")
 }
