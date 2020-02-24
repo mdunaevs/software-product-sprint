@@ -1,9 +1,111 @@
+html{
+    background-color: rgb(250, 250, 255);
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
   width: 650px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-top: 45vh;
+    margin-left: 20vw;
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin-left: 30vw;
 }
 
 #greeting-container {
   margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-variant: small-caps;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  /*color:rgb(152, 140, 140);*/
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.1vw;
+  letter-spacing: 2px;
+}
+
+/* Change the link color to #111 (black) on hover */
+/*li a:hover {
+  color: rgb(214, 32, 32);
+}
+*/
+#navbar{
+    width: 800px;
+}
+
+hr {
+    background: gray;
+    height: 1px;
+    border: none;
+    width: 300%;
+    margin-right: 300px;
+}
+
+#item1 a:hover{
+    color: #4C8BF5;
+}
+#item2 a:hover{
+    color: #1AA260;
+}
+#item3 a:hover{
+    color: #FFCE44;
+}
+#item4 a:hover{
+    color: #DE5246;
+}
+
+#icons {
+    width: 300px;
+    margin-top: 22vh;
+}
+
+#icons ul li{
+    padding: 5px;
+}
+/*
+rgb(30, 82, 243)
+*/
+
+#mypic{
+    float: right;
+}
+
+.fade {
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade:hover {
+    opacity: 0.25;
 }

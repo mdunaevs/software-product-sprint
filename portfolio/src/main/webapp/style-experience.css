@@ -1,0 +1,112 @@
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-variant: small-caps;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  /*color:rgb(152, 140, 140);*/
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.1vw;
+  letter-spacing: 2px;
+}
+
+/* Change the link color to #111 (black) on hover */
+/*li a:hover {
+  color: rgb(214, 32, 32);
+}
+*/
+#navbar{
+    width: 800px;
+}
+
+#item1 a:hover{
+    color: #4C8BF5;
+}
+#item2 a:hover{
+    color: #1AA260;
+}
+#item3 a:hover{
+    color: #FFCE44;
+}
+#item4 a:hover{
+    color: #DE5246;
+}
+
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-item {
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.pic1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+.pic2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.pic3 {
+    grid-column: 1;
+    grid-row: 2;
+}
+.pic4 {
+    grid-column: 2;
+    grid-row: 2;
+}
+.pic5 {
+    grid-column: 1;
+    grid-row: 3;
+}
+.pic6 {
+    grid-column: 2;
+    grid-row: 3;
+}
+.pic7 {
+    grid-column: 1;
+    grid-row: 4;
+}
+.pic8 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
