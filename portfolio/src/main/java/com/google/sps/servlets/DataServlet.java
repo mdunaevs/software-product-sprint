@@ -27,20 +27,17 @@ import java.util.List;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
-  private ArrayList<String> cars;
+  private ArrayList<String> comments;
 
   @Override
   public void init() {
-    cars = new ArrayList<>();
-    cars.add("Ferrari");
-    cars.add("Alpha Romeo");
-    cars.add("Rolls Royce");
+    comments = new ArrayList<>();
   }
 
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String json = convertToJsonUsingGson(cars);
+    String json = convertToJsonUsingGson(comments);
     
     response.setContentType("application/json;");
     response.getWriter().println(json);
@@ -51,4 +48,39 @@ public class DataServlet extends HttpServlet {
     String json = gson.toJson(text);
     return json;
   }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+      // Get the values from the form
+      String msg = getUserComment(request);
+      if (msg.startsWith(":") or msg.endsWith(":")) {
+          return;
+          
+      comments.add(msg);
+
+      response.sendRedirect("/index.html");
+  }
+
+  private String getUserComment(HttpServletRequest request) {
+      // Get the input from the form.
+      String comment = getParameter(request, "comment", "");
+      String name = getParameter(request, "name", "");
+      if (name.length() == 0){
+        System.err.println("Please enter a name");
+        return ":";
+      } else if (comment.length() == 0){
+        System.err.println("Please enter a message");
+        return name + ":";
+      }
+      return name + ":" + comment;
+  }
+
+  private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+    String value = request.getParameter(name);
+    if (value == null) {
+        return defaultValue;
+    }
+    return value;
+  }
+  
 }
