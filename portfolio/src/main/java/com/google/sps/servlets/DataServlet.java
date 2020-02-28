@@ -53,9 +53,10 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
       // Get the values from the form
       String msg = getUserComment(request);
-      if (msg.startsWith(":") or msg.endsWith(":")) {
+      if (msg.startsWith(":") || msg.endsWith(":")) {
           return;
-          
+      } 
+
       comments.add(msg);
 
       response.sendRedirect("/index.html");
