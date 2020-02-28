@@ -12,19 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = "Hello!";
-}
+package com.google.sps.data;
 
-function getRandomQuoteUsingArrowFunctions() {
-  fetch('/data')
-  .then(response => response.json())
-  .then((msg) => {
-    document.getElementById('hello').innerText = msg;
-  });
+/** An item on a todo list. */
+public final class Comment {
+
+  private final long id;
+  private final String name;
+  private final String message;
+
+  public Comment(long id, String name, String message) {
+    this.id = id;
+    this.name = name;
+    this.message = message;
+  }
 }

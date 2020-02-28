@@ -22,12 +22,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 import java.util.List;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
+import com.google.sps.data.Comment;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
-  private ArrayList<String> comments;
+  private ArrayList<Comment> comments;
 
   @Override
   public void init() {
@@ -37,13 +44,26 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    Query query = new Query("Comment");
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    PreparedQuery results = datastore.prepare(query);
+    for (Entity entity : results.asIterable()) {
+        long id = entity.getKey().getId();
+        String name = (String) entity.getProperty("name");
+        String message = (String) entity.getProperty("message");
+
+        Comment com = new Comment(id, name, message);
+        // adding multiple times make an if condition
+        comments.add(com);
+    }
+    
     String json = convertToJsonUsingGson(comments);
     
     response.setContentType("application/json;");
     response.getWriter().println(json);
   }
 
-  private String convertToJsonUsingGson(ArrayList<String> text) {
+  private String convertToJsonUsingGson(ArrayList<Comment> text) {
     Gson gson = new Gson();
     String json = gson.toJson(text);
     return json;
@@ -57,7 +77,13 @@ public class DataServlet extends HttpServlet {
           return;
       } 
 
-      comments.add(msg);
+    //comments.add(msg);
+
+      DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+      Entity commentEntity = new Entity("Comment");
+      commentEntity.setProperty("name", msg.substring(0, msg.indexOf(":")));
+      commentEntity.setProperty("message", msg.substring(msg.indexOf(":") + 1));
+      datastore.put(commentEntity);
 
       response.sendRedirect("/index.html");
   }
