@@ -22,7 +22,9 @@ function addRandomGreeting() {
 }
 
 function getRandomQuoteUsingArrowFunctions() {
-  fetch('/data').then(response => response.text()).then((quote) => {
-    document.getElementById('hello').innerText = quote;
+  fetch('/data')
+  .then(response => response.json())
+  .then((car) => {
+    document.getElementById('hello').innerText = car;
   });
 }
