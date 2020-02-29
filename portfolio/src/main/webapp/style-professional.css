@@ -31,7 +31,7 @@ li a {
 }
 */
 #navbar{
-    width: 800px;
+    width: 100%;
 }
 
 #item1 a:hover{
@@ -91,4 +91,16 @@ li a {
 
 .fade:hover {
     opacity: 0.10;
+}
+
+
+#icons {
+    width: 300px;
+    float: right;
+    margin-right: -5vw;
+}
+
+#icons ul li{
+    padding: 5px;
+    z-index: 1;
 }
