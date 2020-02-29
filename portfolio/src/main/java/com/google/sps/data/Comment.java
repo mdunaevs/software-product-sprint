@@ -26,4 +26,8 @@ public final class Comment {
     this.name = name;
     this.message = message;
   }
+
+  public String printObj(){
+      return this.name + " says " + this.message;
+  }
 }

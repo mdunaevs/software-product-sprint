@@ -54,7 +54,6 @@ public class DataServlet extends HttpServlet {
         String message = (String) entity.getProperty("message");
 
         Comment com = new Comment(id, name, message);
-        // adding multiple times make an if condition
         comments.add(com);
     }
     
