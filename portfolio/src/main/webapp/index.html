@@ -15,6 +15,11 @@
                 <li id = "item2"><a href="professional.html">Professional</a></li>
                 <li id = "item3"><a href="experience.html">Experience</a></li>
                 <li id = "item4"><a href="personal.html">Gallery</a></li>
+                <div id = "icons">
+                    <li><a href = "https://github.com/mdunaevs" target="_blank"><img src="images/github.png" alt="Github" height="30" width="30"></a></li>
+                    <li><a href = "https://www.facebook.com/max.dunaevschi" target="_blank"><img src="images/facebook.png" alt="facebook" height="30" width="30"></a></li>
+                    <li><a href = "https://www.linkedin.com/in/max-dunaevschi-16763716a/" target="_blank"><img src="images/linkedin.png" alt="instagram" height="30" width="30"></a></li>
+                </div>
                 <!-- Page with photos I like and when the mouse is over it, it fades to a description-->
             </ul>
         </div>
@@ -23,27 +28,23 @@
         <h1>I'm <span style="color: rgb(214, 32, 32)">Max</span> Dunaevschi</h1>
         <h2>Welcome to my personal portfolio</h2>
 
-        <div id = "icons">
-            <ul>
-                <li><a href = "https://github.com/mdunaevs" target="_blank"><img src="images/github.png" alt="Github" height="30" width="30"></a></li>
-                <li><a href = "https://www.facebook.com/max.dunaevschi" target="_blank"><img src="images/facebook.png" alt="facebook" height="30" width="30"></a></li>
-                <li><a href = "https://www.linkedin.com/in/max-dunaevschi-16763716a/" target="_blank"><img src="images/linkedin.png" alt="instagram" height="30" width="30"></a></li>
-            <ul>
-        </div>
-
-        <div id = "hello" >
-        </div>
         
-        <form action="/data" method="POST">
-            <p>Send me a message!</p>
 
-            <textarea name="name" required></textarea>
-            <br/>
-            <textarea name="comment" required></textarea>
-            <br/><br/>
+        <div id = "footer">
+            <form action="/data" method="POST" id = "contact">
+                <div id = "info">
+                    <textarea name="name" required placeholder="Name" style = "height:4vh;width:40vw"></textarea>
+                    <br/>
+                    <textarea name="comment" required placeholder="Message" style = "height:9vh;width:40vw"></textarea>
+                    <br/><br/>
+                </div>
+                <div id = "submit-button">
+                    <input type="submit" />
+                <div>
+            </form>
+        </div>
 
-            <input type="submit" />
-        </form>
+        
     </div>
   </body>
 </html>
