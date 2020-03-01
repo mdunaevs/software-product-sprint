@@ -15,40 +15,30 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import com.google.gson.Gson;
-import java.util.List;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
-@WebServlet("/data")
-public class DataServlet extends HttpServlet {
+/** Servlet that returns a random quote. */
+@WebServlet("/favorite-quote")
+public final class FavoriteQuoteServlet extends HttpServlet {
 
-  private ArrayList<String> cars;
+  private List<String> quotes;
 
   @Override
   public void init() {
-    cars = new ArrayList<>();
-    cars.add("Ferrari");
-    cars.add("Alpha Romeo");
-    cars.add("Rolls Royce");
+    quotes = new ArrayList<>();
+    quotes.add("This is max's favorite quote");
   }
-
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String json = convertToJsonUsingGson(cars);
-    
-    response.setContentType("application/json;");
-    response.getWriter().println(json);
-  }
+    String quote = quotes.get(0);
 
-  private String convertToJsonUsingGson(ArrayList<String> text) {
-    Gson gson = new Gson();
-    String json = gson.toJson(text);
-    return json;
+    response.setContentType("text/html;");
+    response.getWriter().println(quote);
   }
 }
