@@ -55,8 +55,9 @@ public class DataServlet extends HttpServlet {
         long id = entity.getKey().getId();
         String name = (String) entity.getProperty("name");
         String message = (String) entity.getProperty("message");
+        String score = (String) entity.getProperty("score");
 
-        Comment com = new Comment(id, name, message);
+        Comment com = new Comment(id, name, message, score);
         comments.add(com);
     }
     
@@ -90,6 +91,7 @@ public class DataServlet extends HttpServlet {
     Entity commentEntity = new Entity("Comment");
     commentEntity.setProperty("name", msg.substring(0, msg.indexOf(":")));
     commentEntity.setProperty("message", msg.substring(msg.indexOf(":") + 1));
+    commentEntity.setProperty("score", String.valueOf(score));
     datastore.put(commentEntity);
 
     response.sendRedirect("/index.html");
