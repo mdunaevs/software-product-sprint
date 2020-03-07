@@ -14,6 +14,9 @@
 
 package com.google.sps.servlets;
 
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.LanguageServiceClient;
+import com.google.cloud.language.v1.Sentiment;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -69,35 +72,42 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-      // Get the values from the form
-      String msg = getUserComment(request);
-      if (msg.startsWith(":") || msg.endsWith(":")) {
-          return;
-      } 
+    // Get the values from the form
+    String msg = getUserComment(request);
+    if (msg.startsWith(":") || msg.endsWith(":")) {
+        return;
+    } 
 
-    //comments.add(msg);
+    Document doc = Document.newBuilder().setContent(msg).setType(Document.Type.PLAIN_TEXT).build();
+    LanguageServiceClient languageService = LanguageServiceClient.create();
+    Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
+    float score = sentiment.getScore();
+    languageService.close();
 
-      DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-      Entity commentEntity = new Entity("Comment");
-      commentEntity.setProperty("name", msg.substring(0, msg.indexOf(":")));
-      commentEntity.setProperty("message", msg.substring(msg.indexOf(":") + 1));
-      datastore.put(commentEntity);
+    System.out.println("Score: " + String.valueOf(score));
 
-      response.sendRedirect("/index.html");
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("name", msg.substring(0, msg.indexOf(":")));
+    commentEntity.setProperty("message", msg.substring(msg.indexOf(":") + 1));
+    datastore.put(commentEntity);
+
+    response.sendRedirect("/index.html");
+
   }
 
   private String getUserComment(HttpServletRequest request) {
-      // Get the input from the form.
-      String comment = getParameter(request, "comment", "");
-      String name = getParameter(request, "name", "");
-      if (name.length() == 0){
-        System.err.println("Please enter a name");
-        return ":";
-      } else if (comment.length() == 0){
-        System.err.println("Please enter a message");
-        return name + ":";
-      }
-      return name + ":" + comment;
+    // Get the input from the form.
+    String comment = getParameter(request, "comment", "");
+    String name = getParameter(request, "name", "");
+    if (name.length() == 0){
+    System.err.println("Please enter a name");
+    return ":";
+    } else if (comment.length() == 0){
+    System.err.println("Please enter a message");
+    return name + ":";
+    }
+    return name + ":" + comment;
   }
 
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
