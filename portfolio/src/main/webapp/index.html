@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src="script.js"></script>
   </head>
-  <body onload="getRandomQuoteUsingArrowFunctions()">    
+  <body>    
         <div id = "navbar">
             <ul>
                 <li id = "item1"><a href="index.html">Home</a></li>
@@ -36,11 +36,16 @@
                     <textarea name="name" required placeholder="Name" style = "height:4vh;width:40vw"></textarea>
                     <br/>
                     <textarea name="comment" required placeholder="Message" style = "height:9vh;width:40vw"></textarea>
-                    <br/><br/>
+                    <br/>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male" checked>
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="female">
                 </div>
                 <div id = "submit-button">
                     <input type="submit" />
                 <div>
+                
             </form>
         </div>
         

@@ -14,6 +14,15 @@
 
 package com.google.sps.servlets;
 
+import java.util.Map;
+import com.google.appengine.api.blobstore.BlobInfo;
+import com.google.appengine.api.blobstore.BlobInfoFactory;
+import com.google.appengine.api.blobstore.BlobKey;
+import com.google.appengine.api.blobstore.BlobstoreService;
+import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
+import com.google.appengine.api.images.ImagesService;
+import com.google.appengine.api.images.ImagesServiceFactory;
+import com.google.appengine.api.images.ServingUrlOptions;
 import com.google.cloud.language.v1.Document;
 import com.google.cloud.language.v1.LanguageServiceClient;
 import com.google.cloud.language.v1.Sentiment;
@@ -47,6 +56,9 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+    String uploadUrl = blobstoreService.createUploadUrl("/data");
+    
     Query query = new Query("Comment");
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
@@ -56,8 +68,9 @@ public class DataServlet extends HttpServlet {
         String name = (String) entity.getProperty("name");
         String message = (String) entity.getProperty("message");
         String score = (String) entity.getProperty("score");
+        String imageURL = (String) entity.getProperty("imageURL");
 
-        Comment com = new Comment(id, name, message, score);
+        Comment com = new Comment(id, name, message, score, imageURL);
         comments.add(com);
     }
     
@@ -85,13 +98,18 @@ public class DataServlet extends HttpServlet {
     float score = sentiment.getScore();
     languageService.close();
 
-    System.out.println("Score: " + String.valueOf(score));
+    String imageURL = "images/img_avatar_m.png";
+    if(getParameter(request, "gender", "").equals("female")){
+        imageURL = "images/img_avatar_f.png";
+    }
+
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     Entity commentEntity = new Entity("Comment");
     commentEntity.setProperty("name", msg.substring(0, msg.indexOf(":")));
     commentEntity.setProperty("message", msg.substring(msg.indexOf(":") + 1));
     commentEntity.setProperty("score", String.valueOf(score));
+    commentEntity.setProperty("imageURL", imageURL);
     datastore.put(commentEntity);
 
     response.sendRedirect("/index.html");
@@ -103,11 +121,11 @@ public class DataServlet extends HttpServlet {
     String comment = getParameter(request, "comment", "");
     String name = getParameter(request, "name", "");
     if (name.length() == 0){
-    System.err.println("Please enter a name");
-    return ":";
+        System.err.println("Please enter a name");
+        return ":";
     } else if (comment.length() == 0){
-    System.err.println("Please enter a message");
-    return name + ":";
+        System.err.println("Please enter a message");
+        return name + ":";
     }
     return name + ":" + comment;
   }

@@ -21,12 +21,14 @@ public final class Comment {
   private final String name;
   private final String message;
   private final String score;
+  private final String imageURL;
 
-  public Comment(long id, String name, String message, String score) {
+  public Comment(long id, String name, String message, String score, String imageURL) {
     this.id = id;
     this.name = name;
     this.message = message;
     this.score = score;
+    this.imageURL = imageURL;
   }
 
 }

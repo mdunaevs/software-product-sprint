@@ -1,3 +1,4 @@
+
 body{
     font-family: 'Montserrat', sans-serif;
 }
@@ -78,7 +79,7 @@ li a {
 }
 
 .pic3{
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1;
 }
 
